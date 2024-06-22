@@ -2,8 +2,19 @@
 
 buildscript {
     repositories {
-        jcenter()
+        maven { url =uri("https://maven.aliyun.com/repository/public") }
+        maven { url =uri("https://maven.aliyun.com/repository/google") }
+        maven { url =uri("https://maven.aliyun.com/repository/gradle-plugin") }
+        mavenLocal()
+        mavenCentral()
         google()
+        // jcenter()
+        maven { url =uri("https://jitpack.io") }
+        mavenCentral(){url =uri("https://jcenter.bintray.com/")}
+        google()
+        // Added for testing local Konsist artifacts
+        mavenLocal()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.4'
@@ -12,9 +23,18 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url =uri("https://maven.aliyun.com/repository/public") }
+        maven { url =uri("https://maven.aliyun.com/repository/google") }
+        maven { url =uri("https://maven.aliyun.com/repository/gradle-plugin") }
+        mavenLocal()
         mavenCentral()
-        jcenter()
-        maven { url "https://jitpack.io" }
         google()
+        // jcenter()
+        maven { url =uri("https://jitpack.io") }
+        mavenCentral(){url =uri("https://jcenter.bintray.com/")}
+        google()
+        // Added for testing local Konsist artifacts
+        mavenLocal()
+        mavenCentral()
     }
 }
